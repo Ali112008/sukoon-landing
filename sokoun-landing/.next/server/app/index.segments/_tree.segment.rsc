@@ -1,0 +1,10 @@
+:HL["/_next/static/chunks/2idv2rzrqok1a.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap","style"]
+:HL["/images/hero_sleep.jpg","image"]
+:HL["/images/hero_morning.jpg","image"]
+:HL["/images/product_detail.jpg","image"]
+:HL["/images/product_benefit.jpg","image"]
+:HL["/images/product_types.jpg","image"]
+:HL["/images/product_sleep.jpg","image"]
+:HL["/images/hero_comfort.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"H3KTot8d5Lt1IJ2RIXwfm"}
