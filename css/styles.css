@@ -310,7 +310,7 @@ ul {
 
 .hero-badge {
     display: inline-block;
-    padding: 8px 22px;
+    padding: 12px 24px;
     background: rgba(200, 169, 110, 0.12);
     border: 1px solid rgba(200, 169, 110, 0.25);
     border-radius: var(--radius-full);
@@ -325,9 +325,9 @@ ul {
 .hero-title {
     font-size: var(--text-6xl);
     font-weight: var(--fw-black);
-    line-height: 1.15;
+    line-height: 1.4;
     margin-bottom: 24px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
@@ -539,9 +539,9 @@ ul {
 .section-title {
     font-size: var(--text-4xl);
     font-weight: var(--fw-extrabold);
-    line-height: 1.25;
+    line-height: 1.4;
     margin-bottom: 18px;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
 }
 
 .section-title .highlight {
