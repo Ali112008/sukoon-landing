@@ -140,37 +140,19 @@ ul {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
     line-height: 1;
 }
 
 .logo-img {
-    height: 44px;
+    height: 48px;
     width: auto;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    border-radius: 8px;
+    object-fit: contain;
+    transition: transform var(--transition);
 }
 
-.logo-text-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.logo-text {
-    font-size: 1.8rem;
-    font-weight: var(--fw-extrabold);
-    color: var(--white);
-    letter-spacing: -0.02em;
-    line-height: 1;
-}
-
-.logo-sub {
-    font-size: 0.6rem;
-    color: var(--accent);
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-weight: var(--fw-light);
-    margin-top: 2px;
+.logo:hover .logo-img {
+    transform: scale(1.03);
 }
 
 .nav-links {
@@ -1013,7 +995,7 @@ ul {
 }
 
 .footer-brand .logo-img {
-    height: 52px;
+    height: 64px;
 }
 
 .footer-desc {
