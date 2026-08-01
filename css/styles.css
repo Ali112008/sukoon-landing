@@ -1,7 +1,7 @@
 /* ============================================
    سُكون - Sukoon Landing Page Styles
    Brand Colors: #1E3A5F, #2C4A6E, #FFFFFF, #F5F5F0
-   Font: Cairo (Geometric Arabic Display Font)
+   Font: Readex Pro (Modern Arabic Display Font)
    ============================================ */
 
 /* CSS Variables - Easy to change colors */
@@ -33,7 +33,7 @@
     --radius-full: 9999px;
 
     /* ─── Typography System ─── */
-    --font-family: 'Cairo', sans-serif;
+    --font-family: 'Readex Pro', sans-serif;
     --fw-light: 300;
     --fw-regular: 400;
     --fw-medium: 500;
