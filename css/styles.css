@@ -5,7 +5,7 @@
    ============================================ */
 
 /* ─── Font Import (backup method) ─── */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900family=Tajawal:wght@200;300;400;500;700;800;900display=swap&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900family=Tajawal:wght@200;300;400;500;700;800;900display=swap&display=swap');
 
 /* CSS Variables - Easy to change colors */
 :root {
@@ -36,7 +36,7 @@
     --radius-full: 9999px;
 
     /* ─── Typography System ─── */
-    --font-family: 'Cairo', sans-serif;
+    --font-family: 'Tajawal', sans-serif;
     --fw-light: 300;
     --fw-regular: 400;
     --fw-medium: 500;
