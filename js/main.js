@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Close menu on link click
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
@@ -43,36 +42,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = '';
             });
         });
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') &&
+                !navLinks.contains(e.target) &&
+                !mobileToggle.contains(e.target)) {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     }
 
     // ============================================
-    // Scroll Animations (Intersection Observer)
+    // Scroll Reveal Animations (Intersection Observer)
     // ============================================
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -80px 0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 // Add staggered delay for grid items
                 const parent = entry.target.parentElement;
                 if (parent) {
                     const siblings = Array.from(parent.children);
                     const idx = siblings.indexOf(entry.target);
-                    entry.target.style.transitionDelay = `${idx * 0.08}s`;
+                    entry.target.style.transitionDelay = `${idx * 0.1}s`;
                 }
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, {
+        root: null,
+        rootMargin: '0px 0px -60px 0px',
+        threshold: 0.1
+    });
 
-    // Observe all animated elements
-    document.querySelectorAll('.feature-card, .product-card, .review-card, .insta-item').forEach(el => {
-        observer.observe(el);
+    // Observe all elements that should animate on scroll
+    document.querySelectorAll('.feature-card, .product-card, .review-card, .insta-item, .reveal, .section-header, .cta-inner, .footer-grid').forEach(el => {
+        revealObserver.observe(el);
     });
 
     // ============================================
@@ -104,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const stats = document.querySelectorAll('.stat-number');
         stats.forEach(stat => {
             const text = stat.textContent;
-            // Only animate if it contains a number
             if (/\d/.test(text)) {
                 const match = text.match(/(\d+)/);
                 if (match) {
@@ -125,11 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Trigger counter animation when hero is visible
     const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                setTimeout(animateCounters, 500);
+                setTimeout(animateCounters, 600);
                 heroObserver.unobserve(entry.target);
             }
         });
@@ -138,6 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.querySelector('.hero-stats');
     if (heroSection) {
         heroObserver.observe(heroSection);
+    }
+
+    // ============================================
+    // Parallax Effect on Hero Shapes
+    // ============================================
+    const shapes = document.querySelectorAll('.shape');
+    if (shapes.length > 0) {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            shapes.forEach((shape, i) => {
+                const speed = (i + 1) * 0.03;
+                shape.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        }, { passive: true });
     }
 
     // ============================================
@@ -155,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const productType = formData.get('productType');
             const message = formData.get('message');
 
-            // Build WhatsApp message
             let waMessage = `مرحبًا، أريد تفعيل الضمان الذهبي\n`;
             waMessage += `الاسم: ${name}\n`;
             waMessage += `رقم الهاتف: ${phone}\n`;
@@ -195,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     document.body.classList.add('loaded');
 
-    // Add loaded class for smooth transitions
     const style = document.createElement('style');
     style.textContent = `
         body:not(.loaded) * {
@@ -205,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    // Remove the style after load
     window.addEventListener('load', () => {
         setTimeout(() => style.remove(), 100);
     });
