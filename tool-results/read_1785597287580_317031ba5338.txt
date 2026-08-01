@@ -1,0 +1,1553 @@
+     1→/* ============================================
+     2→   سُكون - Sukoon Landing Page Styles
+     3→   Brand Colors: #1E3A5F, #2C4A6E, #FFFFFF, #F5F5F0
+     4→   Font: Readex Pro (Modern Arabic Display Font)
+     5→   ============================================ */
+     6→
+     7→/* CSS Variables - Easy to change colors */
+     8→:root {
+     9→    --primary: #1E3A5F;
+    10→    --primary-light: #2C4A6E;
+    11→    --primary-dark: #152D4A;
+    12→    --primary-glow: rgba(30, 58, 95, 0.3);
+    13→    --white: #FFFFFF;
+    14→    --off-white: #F5F5F0;
+    15→    --cream: #F0EDE8;
+    16→    --accent: #C8A96E;
+    17→    --accent-light: #D4BA85;
+    18→    --text-primary: #FFFFFF;
+    19→    --text-secondary: rgba(255, 255, 255, 0.82);
+    20→    --text-muted: rgba(255, 255, 255, 0.55);
+    21→    --border-color: rgba(255, 255, 255, 0.1);
+    22→    --border-color-light: rgba(255, 255, 255, 0.05);
+    23→    --gradient-primary: linear-gradient(135deg, #1E3A5F 0%, #2C4A6E 100%);
+    24→    --gradient-card: linear-gradient(145deg, rgba(44, 74, 110, 0.4) 0%, rgba(30, 58, 95, 0.2) 100%);
+    25→    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    26→    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.2);
+    27→    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+    28→    --shadow-glow: 0 0 40px rgba(200, 169, 110, 0.15);
+    29→    --radius-sm: 8px;
+    30→    --radius-md: 12px;
+    31→    --radius-lg: 20px;
+    32→    --radius-xl: 28px;
+    33→    --radius-full: 9999px;
+    34→
+    35→    /* ─── Typography System ─── */
+    36→    --font-family: 'Readex Pro', sans-serif;
+    37→    --fw-light: 300;
+    38→    --fw-regular: 400;
+    39→    --fw-medium: 500;
+    40→    --fw-semibold: 600;
+    41→    --fw-bold: 700;
+    42→    --fw-extrabold: 800;
+    43→    --fw-black: 900;
+    44→
+    45→    /* Type Scale (modular) */
+    46→    --text-xs: 0.75rem;
+    47→    --text-sm: 0.875rem;
+    48→    --text-base: 1rem;
+    49→    --text-md: 1.0625rem;
+    50→    --text-lg: 1.125rem;
+    51→    --text-xl: 1.25rem;
+    52→    --text-2xl: 1.5rem;
+    53→    --text-3xl: 1.875rem;
+    54→    --text-4xl: 2.25rem;
+    55→    --text-5xl: 3rem;
+    56→    --text-6xl: 3.75rem;
+    57→
+    58→    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    59→    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    60→}
+    61→
+    62→/* Reset & Base */
+    63→*, *::before, *::after {
+    64→    margin: 0;
+    65→    padding: 0;
+    66→    box-sizing: border-box;
+    67→}
+    68→
+    69→html {
+    70→    scroll-behavior: smooth;
+    71→    font-size: 16px;
+    72→}
+    73→
+    74→body {
+    75→    font-family: var(--font-family);
+    76→    background-color: var(--primary);
+    77→    color: var(--text-primary);
+    78→    line-height: 1.75;
+    79→    overflow-x: hidden;
+    80→    -webkit-font-smoothing: antialiased;
+    81→    -moz-osx-font-smoothing: grayscale;
+    82→    font-weight: var(--fw-regular);
+    83→    letter-spacing: 0.01em;
+    84→}
+    85→
+    86→a {
+    87→    text-decoration: none;
+    88→    color: inherit;
+    89→    transition: var(--transition);
+    90→}
+    91→
+    92→img {
+    93→    max-width: 100%;
+    94→    height: auto;
+    95→    display: block;
+    96→}
+    97→
+    98→ul {
+    99→    list-style: none;
+   100→}
+   101→
+   102→.container {
+   103→    width: 100%;
+   104→    max-width: 1200px;
+   105→    margin: 0 auto;
+   106→    padding: 0 24px;
+   107→}
+   108→
+   109→/* ============================================
+   110→   Navbar
+   111→   ============================================ */
+   112→.navbar {
+   113→    position: fixed;
+   114→    top: 0;
+   115→    right: 0;
+   116→    left: 0;
+   117→    z-index: 1000;
+   118→    padding: 18px 0;
+   119→    transition: var(--transition);
+   120→    background: transparent;
+   121→}
+   122→
+   123→.navbar.scrolled {
+   124→    background: rgba(21, 45, 74, 0.95);
+   125→    backdrop-filter: blur(20px);
+   126→    -webkit-backdrop-filter: blur(20px);
+   127→    padding: 10px 0;
+   128→    box-shadow: var(--shadow-md);
+   129→}
+   130→
+   131→.navbar-inner {
+   132→    display: flex;
+   133→    align-items: center;
+   134→    justify-content: space-between;
+   135→}
+   136→
+   137→.logo {
+   138→    display: flex;
+   139→    flex-direction: column;
+   140→    align-items: center;
+   141→    line-height: 1;
+   142→}
+   143→
+   144→.logo-text {
+   145→    font-size: 2rem;
+   146→    font-weight: var(--fw-black);
+   147→    color: var(--white);
+   148→    letter-spacing: -0.02em;
+   149→}
+   150→
+   151→.logo-sub {
+   152→    font-size: 0.65rem;
+   153→    color: var(--accent);
+   154→    letter-spacing: 5px;
+   155→    text-transform: uppercase;
+   156→    font-weight: var(--fw-light);
+   157→    margin-top: 1px;
+   158→}
+   159→
+   160→.nav-links {
+   161→    display: flex;
+   162→    align-items: center;
+   163→    gap: 32px;
+   164→}
+   165→
+   166→.nav-links a {
+   167→    font-size: var(--text-sm);
+   168→    font-weight: var(--fw-semibold);
+   169→    color: var(--text-secondary);
+   170→    position: relative;
+   171→    padding: 4px 0;
+   172→    letter-spacing: 0.02em;
+   173→}
+   174→
+   175→.nav-links a:hover {
+   176→    color: var(--white);
+   177→}
+   178→
+   179→.nav-links a:not(.btn-whatsapp)::after {
+   180→    content: '';
+   181→    position: absolute;
+   182→    bottom: 0;
+   183→    right: 0;
+   184→    width: 0;
+   185→    height: 2px;
+   186→    background: var(--accent);
+   187→    transition: var(--transition);
+   188→}
+   189→
+   190→.nav-links a:not(.btn-whatsapp):hover::after {
+   191→    width: 100%;
+   192→}
+   193→
+   194→.btn-whatsapp {
+   195→    display: inline-flex;
+   196→    align-items: center;
+   197→    gap: 8px;
+   198→    padding: 10px 22px;
+   199→    background: #25D366;
+   200→    color: var(--white) !important;
+   201→    border-radius: var(--radius-full);
+   202→    font-weight: var(--fw-bold);
+   203→    font-size: var(--text-sm);
+   204→    transition: var(--transition);
+   205→    letter-spacing: 0.01em;
+   206→}
+   207→
+   208→.btn-whatsapp:hover {
+   209→    background: #20BD5A;
+   210→    transform: translateY(-2px);
+   211→    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+   212→}
+   213→
+   214→.btn-whatsapp::after {
+   215→    display: none !important;
+   216→}
+   217→
+   218→/* Mobile Toggle */
+   219→.mobile-toggle {
+   220→    display: none;
+   221→    flex-direction: column;
+   222→    gap: 5px;
+   223→    background: none;
+   224→    border: none;
+   225→    cursor: pointer;
+   226→    padding: 8px;
+   227→    z-index: 1001;
+   228→}
+   229→
+   230→.mobile-toggle span {
+   231→    display: block;
+   232→    width: 24px;
+   233→    height: 2px;
+   234→    background: var(--white);
+   235→    transition: var(--transition);
+   236→    border-radius: 2px;
+   237→}
+   238→
+   239→.mobile-toggle.active span:nth-child(1) {
+   240→    transform: rotate(45deg) translate(5px, 5px);
+   241→}
+   242→
+   243→.mobile-toggle.active span:nth-child(2) {
+   244→    opacity: 0;
+   245→}
+   246→
+   247→.mobile-toggle.active span:nth-child(3) {
+   248→    transform: rotate(-45deg) translate(5px, -5px);
+   249→}
+   250→
+   251→/* ============================================
+   252→   Hero Section
+   253→   ============================================ */
+   254→.hero {
+   255→    position: relative;
+   256→    min-height: 100vh;
+   257→    display: flex;
+   258→    align-items: center;
+   259→    padding: 120px 0 80px;
+   260→    overflow: hidden;
+   261→}
+   262→
+   263→.hero-bg-shapes {
+   264→    position: absolute;
+   265→    inset: 0;
+   266→    pointer-events: none;
+   267→    overflow: hidden;
+   268→}
+   269→
+   270→.shape {
+   271→    position: absolute;
+   272→    border-radius: 50%;
+   273→    opacity: 0.08;
+   274→}
+   275→
+   276→.shape-1 {
+   277→    width: 600px;
+   278→    height: 600px;
+   279→    background: var(--accent);
+   280→    top: -200px;
+   281→    left: -100px;
+   282→    filter: blur(100px);
+   283→}
+   284→
+   285→.shape-2 {
+   286→    width: 400px;
+   287→    height: 400px;
+   288→    background: var(--primary-light);
+   289→    bottom: -100px;
+   290→    right: -50px;
+   291→    filter: blur(80px);
+   292→}
+   293→
+   294→.shape-3 {
+   295→    width: 300px;
+   296→    height: 300px;
+   297→    background: var(--accent);
+   298→    top: 50%;
+   299→    right: 30%;
+   300→    filter: blur(120px);
+   301→    opacity: 0.04;
+   302→}
+   303→
+   304→.hero-inner {
+   305→    display: grid;
+   306→    grid-template-columns: 1fr 1fr;
+   307→    gap: 60px;
+   308→    align-items: center;
+   309→    position: relative;
+   310→    z-index: 1;
+   311→}
+   312→
+   313→.hero-badge {
+   314→    display: inline-block;
+   315→    padding: 8px 22px;
+   316→    background: rgba(200, 169, 110, 0.12);
+   317→    border: 1px solid rgba(200, 169, 110, 0.25);
+   318→    border-radius: var(--radius-full);
+   319→    color: var(--accent);
+   320→    font-size: var(--text-sm);
+   321→    font-weight: var(--fw-semibold);
+   322→    margin-bottom: 28px;
+   323→    letter-spacing: 0.03em;
+   324→    animation: fadeInUp 0.8s ease-out;
+   325→}
+   326→
+   327→.hero-title {
+   328→    font-size: var(--text-6xl);
+   329→    font-weight: var(--fw-black);
+   330→    line-height: 1.15;
+   331→    margin-bottom: 24px;
+   332→    letter-spacing: -0.02em;
+   333→    animation: fadeInUp 0.8s ease-out 0.1s both;
+   334→}
+   335→
+   336→.hero-title .highlight {
+   337→    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+   338→    -webkit-background-clip: text;
+   339→    -webkit-text-fill-color: transparent;
+   340→    background-clip: text;
+   341→}
+   342→
+   343→.hero-desc {
+   344→    font-size: var(--text-lg);
+   345→    color: var(--text-secondary);
+   346→    line-height: 1.9;
+   347→    margin-bottom: 40px;
+   348→    max-width: 520px;
+   349→    font-weight: var(--fw-regular);
+   350→    animation: fadeInUp 0.8s ease-out 0.2s both;
+   351→}
+   352→
+   353→.hero-actions {
+   354→    display: flex;
+   355→    gap: 16px;
+   356→    flex-wrap: wrap;
+   357→    margin-bottom: 52px;
+   358→    animation: fadeInUp 0.8s ease-out 0.3s both;
+   359→}
+   360→
+   361→.btn-primary {
+   362→    display: inline-flex;
+   363→    align-items: center;
+   364→    gap: 10px;
+   365→    padding: 16px 36px;
+   366→    background: #25D366;
+   367→    color: var(--white);
+   368→    border-radius: var(--radius-full);
+   369→    font-weight: var(--fw-bold);
+   370→    font-size: var(--text-base);
+   371→    font-family: var(--font-family);
+   372→    border: none;
+   373→    cursor: pointer;
+   374→    transition: var(--transition);
+   375→    letter-spacing: 0.02em;
+   376→}
+   377→
+   378→.btn-primary:hover {
+   379→    background: #20BD5A;
+   380→    transform: translateY(-3px);
+   381→    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+   382→}
+   383→
+   384→.btn-primary.btn-large {
+   385→    padding: 20px 44px;
+   386→    font-size: var(--text-lg);
+   387→}
+   388→
+   389→.btn-secondary {
+   390→    display: inline-flex;
+   391→    align-items: center;
+   392→    gap: 8px;
+   393→    padding: 16px 36px;
+   394→    background: transparent;
+   395→    color: var(--white);
+   396→    border: 2px solid var(--border-color);
+   397→    border-radius: var(--radius-full);
+   398→    font-weight: var(--fw-semibold);
+   399→    font-size: var(--text-base);
+   400→    font-family: var(--font-family);
+   401→    cursor: pointer;
+   402→    transition: var(--transition);
+   403→    letter-spacing: 0.02em;
+   404→}
+   405→
+   406→.btn-secondary:hover {
+   407→    border-color: var(--accent);
+   408→    color: var(--accent);
+   409→    transform: translateY(-3px);
+   410→}
+   411→
+   412→.hero-stats {
+   413→    display: flex;
+   414→    align-items: center;
+   415→    gap: 28px;
+   416→    animation: fadeInUp 0.8s ease-out 0.4s both;
+   417→}
+   418→
+   419→.stat {
+   420→    display: flex;
+   421→    flex-direction: column;
+   422→    align-items: center;
+   423→}
+   424→
+   425→.stat-number {
+   426→    font-size: var(--text-2xl);
+   427→    font-weight: var(--fw-extrabold);
+   428→    color: var(--accent);
+   429→    letter-spacing: -0.01em;
+   430→}
+   431→
+   432→.stat-label {
+   433→    font-size: var(--text-xs);
+   434→    color: var(--text-muted);
+   435→    margin-top: 2px;
+   436→    font-weight: var(--fw-medium);
+   437→    letter-spacing: 0.04em;
+   438→}
+   439→
+   440→.stat-divider {
+   441→    width: 1px;
+   442→    height: 44px;
+   443→    background: var(--border-color);
+   444→}
+   445→
+   446→/* Hero Image */
+   447→.hero-image {
+   448→    position: relative;
+   449→    animation: fadeInRight 1s ease-out 0.3s both;
+   450→}
+   451→
+   452→.hero-img-wrapper {
+   453→    position: relative;
+   454→    border-radius: var(--radius-xl);
+   455→    overflow: hidden;
+   456→    box-shadow: var(--shadow-lg);
+   457→    aspect-ratio: 4/5;
+   458→    max-height: 550px;
+   459→}
+   460→
+   461→.hero-img-wrapper::before {
+   462→    content: '';
+   463→    position: absolute;
+   464→    inset: 0;
+   465→    background: linear-gradient(180deg, transparent 60%, rgba(30, 58, 95, 0.4) 100%);
+   466→    z-index: 1;
+   467→}
+   468→
+   469→.hero-img-wrapper img {
+   470→    width: 100%;
+   471→    height: 100%;
+   472→    object-fit: cover;
+   473→    transition: transform 0.8s ease;
+   474→}
+   475→
+   476→.hero-img-wrapper:hover img {
+   477→    transform: scale(1.05);
+   478→}
+   479→
+   480→.hero-float-badge {
+   481→    position: absolute;
+   482→    top: 24px;
+   483→    left: 24px;
+   484→    display: flex;
+   485→    align-items: center;
+   486→    gap: 8px;
+   487→    padding: 10px 20px;
+   488→    background: rgba(200, 169, 110, 0.95);
+   489→    color: var(--primary-dark);
+   490→    border-radius: var(--radius-full);
+   491→    font-weight: var(--fw-bold);
+   492→    font-size: var(--text-sm);
+   493→    z-index: 2;
+   494→    animation: float 3s ease-in-out infinite;
+   495→    box-shadow: var(--shadow-glow);
+   496→    letter-spacing: 0.02em;
+   497→}
+   498→
+   499→.hero-float-badge svg {
+   500→    fill: var(--primary-dark);
+   501→}
+   502→
+   503→/* Scroll Indicator */
+   504→.hero-scroll-indicator {
+   505→    position: absolute;
+   506→    bottom: 32px;
+   507→    left: 50%;
+   508→    transform: translateX(-50%);
+   509→    display: flex;
+   510→    flex-direction: column;
+   511→    align-items: center;
+   512→    gap: 8px;
+   513→    color: var(--text-muted);
+   514→    font-size: var(--text-xs);
+   515→    font-weight: var(--fw-medium);
+   516→    letter-spacing: 0.06em;
+   517→    animation: bounce 2s ease-in-out infinite;
+   518→}
+   519→
+   520→/* ============================================
+   521→   Section Common Styles
+   522→   ============================================ */
+   523→.section-header {
+   524→    text-align: center;
+   525→    margin-bottom: 72px;
+   526→}
+   527→
+   528→.section-badge {
+   529→    display: inline-block;
+   530→    padding: 7px 20px;
+   531→    background: rgba(200, 169, 110, 0.1);
+   532→    border: 1px solid rgba(200, 169, 110, 0.2);
+   533→    border-radius: var(--radius-full);
+   534→    color: var(--accent);
+   535→    font-size: var(--text-sm);
+   536→    font-weight: var(--fw-semibold);
+   537→    margin-bottom: 18px;
+   538→    letter-spacing: 0.04em;
+   539→}
+   540→
+   541→.section-title {
+   542→    font-size: var(--text-4xl);
+   543→    font-weight: var(--fw-extrabold);
+   544→    line-height: 1.25;
+   545→    margin-bottom: 18px;
+   546→    letter-spacing: -0.01em;
+   547→}
+   548→
+   549→.section-title .highlight {
+   550→    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+   551→    -webkit-background-clip: text;
+   552→    -webkit-text-fill-color: transparent;
+   553→    background-clip: text;
+   554→}
+   555→
+   556→.section-desc {
+   557→    font-size: var(--text-md);
+   558→    color: var(--text-secondary);
+   559→    max-width: 620px;
+   560→    margin: 0 auto;
+   561→    line-height: 1.85;
+   562→    font-weight: var(--fw-regular);
+   563→}
+   564→
+   565→/* ============================================
+   566→   Features Section
+   567→   ============================================ */
+   568→.features {
+   569→    padding: 100px 0;
+   570→    position: relative;
+   571→}
+   572→
+   573→.features::before {
+   574→    content: '';
+   575→    position: absolute;
+   576→    top: 0;
+   577→    right: 0;
+   578→    left: 0;
+   579→    height: 1px;
+   580→    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+   581→}
+   582→
+   583→.features-grid {
+   584→    display: grid;
+   585→    grid-template-columns: repeat(4, 1fr);
+   586→    gap: 24px;
+   587→}
+   588→
+   589→.feature-card {
+   590→    padding: 36px 28px;
+   591→    background: var(--gradient-card);
+   592→    border: 1px solid var(--border-color-light);
+   593→    border-radius: var(--radius-lg);
+   594→    text-align: center;
+   595→    transition: var(--transition);
+   596→    position: relative;
+   597→    overflow: hidden;
+   598→}
+   599→
+   600→.feature-card::before {
+   601→    content: '';
+   602→    position: absolute;
+   603→    top: 0;
+   604→    left: 0;
+   605→    right: 0;
+   606→    height: 3px;
+   607→    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+   608→    opacity: 0;
+   609→    transition: var(--transition);
+   610→}
+   611→
+   612→.feature-card:hover {
+   613→    transform: translateY(-8px);
+   614→    border-color: rgba(200, 169, 110, 0.2);
+   615→    box-shadow: var(--shadow-glow);
+   616→}
+   617→
+   618→.feature-card:hover::before {
+   619→    opacity: 1;
+   620→}
+   621→
+   622→.feature-icon {
+   623→    width: 64px;
+   624→    height: 64px;
+   625→    margin: 0 auto 22px;
+   626→    display: flex;
+   627→    align-items: center;
+   628→    justify-content: center;
+   629→    background: rgba(200, 169, 110, 0.1);
+   630→    border-radius: var(--radius-md);
+   631→    color: var(--accent);
+   632→    transition: var(--transition);
+   633→}
+   634→
+   635→.feature-card:hover .feature-icon {
+   636→    background: rgba(200, 169, 110, 0.2);
+   637→    transform: scale(1.1);
+   638→}
+   639→
+   640→.feature-card h3 {
+   641→    font-size: var(--text-base);
+   642→    font-weight: var(--fw-bold);
+   643→    margin-bottom: 12px;
+   644→    color: var(--white);
+   645→    letter-spacing: 0.01em;
+   646→}
+   647→
+   648→.feature-card p {
+   649→    font-size: var(--text-sm);
+   650→    color: var(--text-secondary);
+   651→    line-height: 1.75;
+   652→    font-weight: var(--fw-regular);
+   653→}
+   654→
+   655→/* ============================================
+   656→   Products Section
+   657→   ============================================ */
+   658→.products {
+   659→    padding: 100px 0;
+   660→    background: var(--primary-dark);
+   661→    position: relative;
+   662→}
+   663→
+   664→.products-grid {
+   665→    display: grid;
+   666→    grid-template-columns: repeat(3, 1fr);
+   667→    gap: 32px;
+   668→}
+   669→
+   670→.product-card {
+   671→    background: var(--gradient-card);
+   672→    border: 1px solid var(--border-color-light);
+   673→    border-radius: var(--radius-xl);
+   674→    overflow: hidden;
+   675→    transition: var(--transition);
+   676→    position: relative;
+   677→}
+   678→
+   679→.product-card:hover {
+   680→    transform: translateY(-10px);
+   681→    box-shadow: var(--shadow-lg);
+   682→    border-color: rgba(200, 169, 110, 0.2);
+   683→}
+   684→
+   685→.product-card.premium {
+   686→    border-color: rgba(200, 169, 110, 0.3);
+   687→    box-shadow: var(--shadow-glow);
+   688→}
+   689→
+   690→.product-badge {
+   691→    position: absolute;
+   692→    top: 20px;
+   693→    right: 20px;
+   694→    padding: 6px 18px;
+   695→    background: var(--accent);
+   696→    color: var(--primary-dark);
+   697→    border-radius: var(--radius-full);
+   698→    font-size: var(--text-xs);
+   699→    font-weight: var(--fw-bold);
+   700→    z-index: 2;
+   701→    letter-spacing: 0.03em;
+   702→}
+   703→
+   704→.product-image {
+   705→    position: relative;
+   706→    aspect-ratio: 4/3;
+   707→    overflow: hidden;
+   708→}
+   709→
+   710→.product-image img {
+   711→    width: 100%;
+   712→    height: 100%;
+   713→    object-fit: cover;
+   714→    transition: transform 0.6s ease;
+   715→}
+   716→
+   717→.product-card:hover .product-image img {
+   718→    transform: scale(1.08);
+   719→}
+   720→
+   721→.product-info {
+   722→    padding: 32px;
+   723→}
+   724→
+   725→.product-name {
+   726→    font-size: var(--text-xl);
+   727→    font-weight: var(--fw-extrabold);
+   728→    margin-bottom: 4px;
+   729→    letter-spacing: -0.01em;
+   730→}
+   731→
+   732→.product-type {
+   733→    font-size: var(--text-sm);
+   734→    color: var(--accent);
+   735→    font-weight: var(--fw-semibold);
+   736→    margin-bottom: 14px;
+   737→    letter-spacing: 0.03em;
+   738→}
+   739→
+   740→.product-desc {
+   741→    font-size: var(--text-sm);
+   742→    color: var(--text-secondary);
+   743→    line-height: 1.75;
+   744→    margin-bottom: 18px;
+   745→    font-weight: var(--fw-regular);
+   746→}
+   747→
+   748→.product-features {
+   749→    margin-bottom: 24px;
+   750→}
+   751→
+   752→.product-features li {
+   753→    position: relative;
+   754→    padding-right: 24px;
+   755→    margin-bottom: 8px;
+   756→    font-size: var(--text-sm);
+   757→    color: var(--text-secondary);
+   758→    font-weight: var(--fw-regular);
+   759→}
+   760→
+   761→.product-features li::before {
+   762→    content: '';
+   763→    position: absolute;
+   764→    right: 0;
+   765→    top: 8px;
+   766→    width: 8px;
+   767→    height: 8px;
+   768→    background: var(--accent);
+   769→    border-radius: 50%;
+   770→}
+   771→
+   772→.btn-product {
+   773→    display: inline-flex;
+   774→    align-items: center;
+   775→    gap: 8px;
+   776→    width: 100%;
+   777→    justify-content: center;
+   778→    padding: 14px 24px;
+   779→    background: #25D366;
+   780→    color: var(--white);
+   781→    border-radius: var(--radius-full);
+   782→    font-weight: var(--fw-bold);
+   783→    font-size: var(--text-sm);
+   784→    font-family: var(--font-family);
+   785→    transition: var(--transition);
+   786→    letter-spacing: 0.02em;
+   787→}
+   788→
+   789→.btn-product:hover {
+   790→    background: #20BD5A;
+   791→    transform: translateY(-2px);
+   792→    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+   793→}
+   794→
+   795→/* ============================================
+   796→   Reviews Section
+   797→   ============================================ */
+   798→.reviews {
+   799→    padding: 100px 0;
+   800→    position: relative;
+   801→}
+   802→
+   803→.reviews-grid {
+   804→    display: grid;
+   805→    grid-template-columns: repeat(3, 1fr);
+   806→    gap: 32px;
+   807→    margin-bottom: 64px;
+   808→}
+   809→
+   810→.review-card {
+   811→    padding: 36px;
+   812→    background: var(--gradient-card);
+   813→    border: 1px solid var(--border-color-light);
+   814→    border-radius: var(--radius-lg);
+   815→    transition: var(--transition);
+   816→}
+   817→
+   818→.review-card:hover {
+   819→    transform: translateY(-5px);
+   820→    border-color: rgba(200, 169, 110, 0.15);
+   821→}
+   822→
+   823→.review-stars {
+   824→    color: var(--accent);
+   825→    font-size: var(--text-lg);
+   826→    margin-bottom: 18px;
+   827→    letter-spacing: 3px;
+   828→}
+   829→
+   830→.review-text {
+   831→    font-size: var(--text-sm);
+   832→    color: var(--text-secondary);
+   833→    line-height: 1.85;
+   834→    margin-bottom: 22px;
+   835→    font-style: italic;
+   836→    font-weight: var(--fw-regular);
+   837→}
+   838→
+   839→.review-author {
+   840→    display: flex;
+   841→    align-items: center;
+   842→    gap: 12px;
+   843→}
+   844→
+   845→.author-avatar {
+   846→    width: 44px;
+   847→    height: 44px;
+   848→    display: flex;
+   849→    align-items: center;
+   850→    justify-content: center;
+   851→    background: rgba(200, 169, 110, 0.15);
+   852→    color: var(--accent);
+   853→    border-radius: 50%;
+   854→    font-weight: var(--fw-bold);
+   855→    font-size: var(--text-lg);
+   856→}
+   857→
+   858→.author-info {
+   859→    display: flex;
+   860→    flex-direction: column;
+   861→}
+   862→
+   863→.author-name {
+   864→    font-weight: var(--fw-semibold);
+   865→    font-size: var(--text-sm);
+   866→    letter-spacing: 0.01em;
+   867→}
+   868→
+   869→.author-verified {
+   870→    font-size: var(--text-xs);
+   871→    color: var(--accent);
+   872→    font-weight: var(--fw-medium);
+   873→}
+   874→
+   875→/* Instagram Gallery */
+   876→.insta-gallery {
+   877→    text-align: center;
+   878→}
+   879→
+   880→.insta-title {
+   881→    font-size: var(--text-lg);
+   882→    font-weight: var(--fw-semibold);
+   883→    color: var(--text-secondary);
+   884→    margin-bottom: 24px;
+   885→    letter-spacing: 0.02em;
+   886→}
+   887→
+   888→.insta-grid {
+   889→    display: grid;
+   890→    grid-template-columns: repeat(4, 1fr);
+   891→    gap: 16px;
+   892→}
+   893→
+   894→.insta-item {
+   895→    position: relative;
+   896→    aspect-ratio: 1;
+   897→    border-radius: var(--radius-md);
+   898→    overflow: hidden;
+   899→    cursor: pointer;
+   900→}
+   901→
+   902→.insta-item img {
+   903→    width: 100%;
+   904→    height: 100%;
+   905→    object-fit: cover;
+   906→    transition: transform 0.5s ease;
+   907→}
+   908→
+   909→.insta-item:hover img {
+   910→    transform: scale(1.1);
+   911→}
+   912→
+   913→.insta-overlay {
+   914→    position: absolute;
+   915→    inset: 0;
+   916→    background: rgba(30, 58, 95, 0.7);
+   917→    display: flex;
+   918→    align-items: center;
+   919→    justify-content: center;
+   920→    opacity: 0;
+   921→    transition: var(--transition);
+   922→    color: var(--white);
+   923→}
+   924→
+   925→.insta-item:hover .insta-overlay {
+   926→    opacity: 1;
+   927→}
+   928→
+   929→/* ============================================
+   930→   CTA Section
+   931→   ============================================ */
+   932→.cta-section {
+   933→    padding: 100px 0;
+   934→    background: var(--primary-dark);
+   935→}
+   936→
+   937→.cta-inner {
+   938→    text-align: center;
+   939→    padding: 80px 40px;
+   940→    background: linear-gradient(135deg, rgba(200, 169, 110, 0.1) 0%, rgba(200, 169, 110, 0.05) 100%);
+   941→    border: 1px solid rgba(200, 169, 110, 0.2);
+   942→    border-radius: var(--radius-xl);
+   943→    position: relative;
+   944→    overflow: hidden;
+   945→}
+   946→
+   947→.cta-inner::before {
+   948→    content: '';
+   949→    position: absolute;
+   950→    top: -50%;
+   951→    left: -50%;
+   952→    width: 200%;
+   953→    height: 200%;
+   954→    background: radial-gradient(ellipse at center, rgba(200, 169, 110, 0.05) 0%, transparent 70%);
+   955→    animation: rotate 20s linear infinite;
+   956→}
+   957→
+   958→.cta-content {
+   959→    position: relative;
+   960→    z-index: 1;
+   961→}
+   962→
+   963→.cta-content h2 {
+   964→    font-size: var(--text-4xl);
+   965→    font-weight: var(--fw-extrabold);
+   966→    margin-bottom: 18px;
+   967→    letter-spacing: -0.01em;
+   968→}
+   969→
+   970→.cta-content p {
+   971→    font-size: var(--text-lg);
+   972→    color: var(--text-secondary);
+   973→    max-width: 550px;
+   974→    margin: 0 auto 36px;
+   975→    line-height: 1.85;
+   976→    font-weight: var(--fw-regular);
+   977→}
+   978→
+   979→/* ============================================
+   980→   Footer
+   981→   ============================================ */
+   982→.footer {
+   983→    padding: 64px 0 0;
+   984→    border-top: 1px solid var(--border-color);
+   985→}
+   986→
+   987→.footer-grid {
+   988→    display: grid;
+   989→    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+   990→    gap: 48px;
+   991→    padding-bottom: 48px;
+   992→}
+   993→
+   994→.footer-brand .logo {
+   995→    align-items: flex-start;
+   996→    margin-bottom: 16px;
+   997→}
+   998→
+   999→.footer-desc {
+  1000→    font-size: var(--text-sm);
+  1001→    color: var(--text-muted);
+  1002→    line-height: 1.85;
+  1003→    margin-bottom: 24px;
+  1004→    max-width: 320px;
+  1005→    font-weight: var(--fw-regular);
+  1006→}
+  1007→
+  1008→.footer-social {
+  1009→    display: flex;
+  1010→    gap: 12px;
+  1011→}
+  1012→
+  1013→.footer-social a {
+  1014→    width: 42px;
+  1015→    height: 42px;
+  1016→    display: flex;
+  1017→    align-items: center;
+  1018→    justify-content: center;
+  1019→    background: rgba(255, 255, 255, 0.05);
+  1020→    border: 1px solid var(--border-color);
+  1021→    border-radius: var(--radius-sm);
+  1022→    color: var(--text-secondary);
+  1023→    transition: var(--transition);
+  1024→}
+  1025→
+  1026→.footer-social a:hover {
+  1027→    background: var(--accent);
+  1028→    color: var(--primary-dark);
+  1029→    border-color: var(--accent);
+  1030→    transform: translateY(-3px);
+  1031→}
+  1032→
+  1033→.footer-links h4 {
+  1034→    font-size: var(--text-base);
+  1035→    font-weight: var(--fw-bold);
+  1036→    margin-bottom: 22px;
+  1037→    color: var(--white);
+  1038→    letter-spacing: 0.02em;
+  1039→}
+  1040→
+  1041→.footer-links ul {
+  1042→    display: flex;
+  1043→    flex-direction: column;
+  1044→    gap: 12px;
+  1045→}
+  1046→
+  1047→.footer-links a {
+  1048→    font-size: var(--text-sm);
+  1049→    color: var(--text-muted);
+  1050→    font-weight: var(--fw-regular);
+  1051→}
+  1052→
+  1053→.footer-links a:hover {
+  1054→    color: var(--accent);
+  1055→    padding-right: 8px;
+  1056→}
+  1057→
+  1058→.footer-contact h4 {
+  1059→    font-size: var(--text-base);
+  1060→    font-weight: var(--fw-bold);
+  1061→    margin-bottom: 22px;
+  1062→    color: var(--white);
+  1063→    letter-spacing: 0.02em;
+  1064→}
+  1065→
+  1066→.contact-item {
+  1067→    display: flex;
+  1068→    align-items: center;
+  1069→    gap: 10px;
+  1070→    font-size: var(--text-sm);
+  1071→    color: var(--text-muted);
+  1072→    margin-bottom: 12px;
+  1073→    font-weight: var(--fw-regular);
+  1074→}
+  1075→
+  1076→.contact-item:hover {
+  1077→    color: var(--accent);
+  1078→}
+  1079→
+  1080→.footer-bottom {
+  1081→    padding: 24px 0;
+  1082→    border-top: 1px solid var(--border-color);
+  1083→    text-align: center;
+  1084→}
+  1085→
+  1086→.footer-bottom p {
+  1087→    font-size: var(--text-xs);
+  1088→    color: var(--text-muted);
+  1089→    font-weight: var(--fw-regular);
+  1090→    letter-spacing: 0.02em;
+  1091→}
+  1092→
+  1093→/* ============================================
+  1094→   Floating WhatsApp Button
+  1095→   ============================================ */
+  1096→.whatsapp-float {
+  1097→    position: fixed;
+  1098→    bottom: 28px;
+  1099→    left: 28px;
+  1100→    width: 60px;
+  1101→    height: 60px;
+  1102→    display: flex;
+  1103→    align-items: center;
+  1104→    justify-content: center;
+  1105→    background: #25D366;
+  1106→    color: var(--white);
+  1107→    border-radius: 50%;
+  1108→    z-index: 999;
+  1109→    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+  1110→    transition: var(--transition);
+  1111→    animation: pulse 2s ease-in-out infinite;
+  1112→}
+  1113→
+  1114→.whatsapp-float:hover {
+  1115→    transform: scale(1.1);
+  1116→    box-shadow: 0 10px 35px rgba(37, 211, 102, 0.5);
+  1117→}
+  1118→
+  1119→/* ============================================
+  1120→   Sub Pages Common Styles
+  1121→   ============================================ */
+  1122→.page-header {
+  1123→    padding: 140px 0 60px;
+  1124→    text-align: center;
+  1125→    position: relative;
+  1126→}
+  1127→
+  1128→.page-header::before {
+  1129→    content: '';
+  1130→    position: absolute;
+  1131→    bottom: 0;
+  1132→    right: 0;
+  1133→    left: 0;
+  1134→    height: 1px;
+  1135→    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+  1136→}
+  1137→
+  1138→.page-header h1 {
+  1139→    font-size: var(--text-4xl);
+  1140→    font-weight: var(--fw-extrabold);
+  1141→    margin-bottom: 14px;
+  1142→    letter-spacing: -0.01em;
+  1143→}
+  1144→
+  1145→.page-header p {
+  1146→    color: var(--text-secondary);
+  1147→    font-size: var(--text-md);
+  1148→    font-weight: var(--fw-regular);
+  1149→}
+  1150→
+  1151→.page-content {
+  1152→    padding: 60px 0 100px;
+  1153→    max-width: 800px;
+  1154→    margin: 0 auto;
+  1155→}
+  1156→
+  1157→.page-content h2 {
+  1158→    font-size: var(--text-2xl);
+  1159→    font-weight: var(--fw-bold);
+  1160→    margin: 44px 0 18px;
+  1161→    color: var(--accent);
+  1162→    letter-spacing: 0.01em;
+  1163→}
+  1164→
+  1165→.page-content h3 {
+  1166→    font-size: var(--text-xl);
+  1167→    font-weight: var(--fw-semibold);
+  1168→    margin: 28px 0 12px;
+  1169→    letter-spacing: 0.01em;
+  1170→}
+  1171→
+  1172→.page-content p {
+  1173→    color: var(--text-secondary);
+  1174→    line-height: 1.9;
+  1175→    margin-bottom: 18px;
+  1176→    font-size: var(--text-base);
+  1177→    font-weight: var(--fw-regular);
+  1178→}
+  1179→
+  1180→.page-content ul {
+  1181→    padding-right: 24px;
+  1182→    margin-bottom: 18px;
+  1183→}
+  1184→
+  1185→.page-content ul li {
+  1186→    position: relative;
+  1187→    padding-right: 20px;
+  1188→    margin-bottom: 10px;
+  1189→    color: var(--text-secondary);
+  1190→    line-height: 1.85;
+  1191→    font-size: var(--text-sm);
+  1192→    font-weight: var(--fw-regular);
+  1193→}
+  1194→
+  1195→.page-content ul li::before {
+  1196→    content: '';
+  1197→    position: absolute;
+  1198→    right: 0;
+  1199→    top: 10px;
+  1200→    width: 6px;
+  1201→    height: 6px;
+  1202→    background: var(--accent);
+  1203→    border-radius: 50%;
+  1204→}
+  1205→
+  1206→.back-link {
+  1207→    display: inline-flex;
+  1208→    align-items: center;
+  1209→    gap: 8px;
+  1210→    color: var(--accent);
+  1211→    font-weight: var(--fw-semibold);
+  1212→    margin-bottom: 24px;
+  1213→    font-size: var(--text-sm);
+  1214→    letter-spacing: 0.02em;
+  1215→}
+  1216→
+  1217→.back-link:hover {
+  1218→    color: var(--accent-light);
+  1219→}
+  1220→
+  1221→/* ============================================
+  1222→   Warranty Form
+  1223→   ============================================ */
+  1224→.warranty-form {
+  1225→    max-width: 600px;
+  1226→    margin: 40px auto 0;
+  1227→}
+  1228→
+  1229→.form-group {
+  1230→    margin-bottom: 24px;
+  1231→}
+  1232→
+  1233→.form-group label {
+  1234→    display: block;
+  1235→    font-size: var(--text-sm);
+  1236→    font-weight: var(--fw-semibold);
+  1237→    margin-bottom: 8px;
+  1238→    color: var(--white);
+  1239→    letter-spacing: 0.02em;
+  1240→}
+  1241→
+  1242→.form-group input,
+  1243→.form-group select,
+  1244→.form-group textarea {
+  1245→    width: 100%;
+  1246→    padding: 14px 18px;
+  1247→    background: rgba(255, 255, 255, 0.05);
+  1248→    border: 1px solid var(--border-color);
+  1249→    border-radius: var(--radius-md);
+  1250→    color: var(--white);
+  1251→    font-family: var(--font-family);
+  1252→    font-size: var(--text-sm);
+  1253→    transition: var(--transition);
+  1254→    outline: none;
+  1255→    font-weight: var(--fw-regular);
+  1256→}
+  1257→
+  1258→.form-group input:focus,
+  1259→.form-group select:focus,
+  1260→.form-group textarea:focus {
+  1261→    border-color: var(--accent);
+  1262→    background: rgba(255, 255, 255, 0.08);
+  1263→}
+  1264→
+  1265→.form-group textarea {
+  1266→    resize: vertical;
+  1267→    min-height: 120px;
+  1268→}
+  1269→
+  1270→.form-group input::placeholder,
+  1271→.form-group textarea::placeholder {
+  1272→    color: var(--text-muted);
+  1273→}
+  1274→
+  1275→.form-submit {
+  1276→    width: 100%;
+  1277→    padding: 16px;
+  1278→    background: var(--accent);
+  1279→    color: var(--primary-dark);
+  1280→    border: none;
+  1281→    border-radius: var(--radius-full);
+  1282→    font-family: var(--font-family);
+  1283→    font-size: var(--text-base);
+  1284→    font-weight: var(--fw-bold);
+  1285→    cursor: pointer;
+  1286→    transition: var(--transition);
+  1287→    letter-spacing: 0.02em;
+  1288→}
+  1289→
+  1290→.form-submit:hover {
+  1291→    background: var(--accent-light);
+  1292→    transform: translateY(-2px);
+  1293→    box-shadow: var(--shadow-glow);
+  1294→}
+  1295→
+  1296→/* ============================================
+  1297→   Animations
+  1298→   ============================================ */
+  1299→@keyframes fadeInUp {
+  1300→    from {
+  1301→        opacity: 0;
+  1302→        transform: translateY(30px);
+  1303→    }
+  1304→    to {
+  1305→        opacity: 1;
+  1306→        transform: translateY(0);
+  1307→    }
+  1308→}
+  1309→
+  1310→@keyframes fadeInRight {
+  1311→    from {
+  1312→        opacity: 0;
+  1313→        transform: translateX(50px);
+  1314→    }
+  1315→    to {
+  1316→        opacity: 1;
+  1317→        transform: translateX(0);
+  1318→    }
+  1319→}
+  1320→
+  1321→@keyframes float {
+  1322→    0%, 100% { transform: translateY(0); }
+  1323→    50% { transform: translateY(-10px); }
+  1324→}
+  1325→
+  1326→@keyframes bounce {
+  1327→    0%, 100% { transform: translateX(-50%) translateY(0); }
+  1328→    50% { transform: translateX(-50%) translateY(8px); }
+  1329→}
+  1330→
+  1331→@keyframes pulse {
+  1332→    0%, 100% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4); }
+  1333→    50% { box-shadow: 0 6px 40px rgba(37, 211, 102, 0.6); }
+  1334→}
+  1335→
+  1336→@keyframes rotate {
+  1337→    from { transform: rotate(0deg); }
+  1338→    to { transform: rotate(360deg); }
+  1339→}
+  1340→
+  1341→/* Scroll Animation */
+  1342→.feature-card,
+  1343→.product-card,
+  1344→.review-card,
+  1345→.insta-item {
+  1346→    opacity: 0;
+  1347→    transform: translateY(40px);
+  1348→    transition: opacity 0.6s ease, transform 0.6s ease;
+  1349→}
+  1350→
+  1351→.feature-card.visible,
+  1352→.product-card.visible,
+  1353→.review-card.visible,
+  1354→.insta-item.visible {
+  1355→    opacity: 1;
+  1356→    transform: translateY(0);
+  1357→}
+  1358→
+  1359→/* ============================================
+  1360→   Responsive Design
+  1361→   ============================================ */
+  1362→@media (max-width: 1024px) {
+  1363→    .hero-inner {
+  1364→        grid-template-columns: 1fr;
+  1365→        gap: 40px;
+  1366→        text-align: center;
+  1367→    }
+  1368→
+  1369→    .hero-desc {
+  1370→        max-width: 100%;
+  1371→        margin: 0 auto 40px;
+  1372→    }
+  1373→
+  1374→    .hero-actions {
+  1375→        justify-content: center;
+  1376→    }
+  1377→
+  1378→    .hero-stats {
+  1379→        justify-content: center;
+  1380→    }
+  1381→
+  1382→    .hero-image {
+  1383→        max-width: 400px;
+  1384→        margin: 0 auto;
+  1385→    }
+  1386→
+  1387→    .features-grid {
+  1388→        grid-template-columns: repeat(3, 1fr);
+  1389→    }
+  1390→
+  1391→    .products-grid {
+  1392→        grid-template-columns: repeat(2, 1fr);
+  1393→    }
+  1394→
+  1395→    .footer-grid {
+  1396→        grid-template-columns: 1fr 1fr;
+  1397→        gap: 32px;
+  1398→    }
+  1399→}
+  1400→
+  1401→@media (max-width: 768px) {
+  1402→    html {
+  1403→        font-size: 15px;
+  1404→    }
+  1405→
+  1406→    .nav-links {
+  1407→        position: fixed;
+  1408→        top: 0;
+  1409→        right: -100%;
+  1410→        width: 80%;
+  1411→        height: 100vh;
+  1412→        background: rgba(21, 45, 74, 0.98);
+  1413→        backdrop-filter: blur(20px);
+  1414→        flex-direction: column;
+  1415→        justify-content: center;
+  1416→        padding: 40px;
+  1417→        gap: 24px;
+  1418→        transition: var(--transition-slow);
+  1419→    }
+  1420→
+  1421→    .nav-links.active {
+  1422→        right: 0;
+  1423→    }
+  1424→
+  1425→    .mobile-toggle {
+  1426→        display: flex;
+  1427→    }
+  1428→
+  1429→    .hero-title {
+  1430→        font-size: var(--text-5xl);
+  1431→    }
+  1432→
+  1433→    .hero {
+  1434→        padding: 100px 0 60px;
+  1435→    }
+  1436→
+  1437→    .features-grid {
+  1438→        grid-template-columns: repeat(2, 1fr);
+  1439→        gap: 16px;
+  1440→    }
+  1441→
+  1442→    .feature-card {
+  1443→        padding: 24px 16px;
+  1444→    }
+  1445→
+  1446→    .products-grid {
+  1447→        grid-template-columns: 1fr;
+  1448→        max-width: 400px;
+  1449→        margin: 0 auto;
+  1450→    }
+  1451→
+  1452→    .reviews-grid {
+  1453→        grid-template-columns: 1fr;
+  1454→        max-width: 500px;
+  1455→        margin: 0 auto 64px;
+  1456→    }
+  1457→
+  1458→    .insta-grid {
+  1459→        grid-template-columns: repeat(2, 1fr);
+  1460→    }
+  1461→
+  1462→    .section-title {
+  1463→        font-size: var(--text-3xl);
+  1464→    }
+  1465→
+  1466→    .cta-content h2 {
+  1467→        font-size: var(--text-3xl);
+  1468→    }
+  1469→
+  1470→    .cta-inner {
+  1471→        padding: 48px 24px;
+  1472→    }
+  1473→
+  1474→    .footer-grid {
+  1475→        grid-template-columns: 1fr;
+  1476→        text-align: center;
+  1477→    }
+  1478→
+  1479→    .footer-brand .logo {
+  1480→        align-items: center;
+  1481→    }
+  1482→
+  1483→    .footer-desc {
+  1484→        max-width: 100%;
+  1485→        margin: 0 auto 24px;
+  1486→    }
+  1487→
+  1488→    .footer-social {
+  1489→        justify-content: center;
+  1490→    }
+  1491→
+  1492→    .whatsapp-float {
+  1493→        bottom: 20px;
+  1494→        left: 20px;
+  1495→        width: 52px;
+  1496→        height: 52px;
+  1497→    }
+  1498→}
+  1499→
+  1500→@media (max-width: 480px) {
+  1501→    .hero-title {
+  1502→        font-size: var(--text-4xl);
+  1503→    }
+  1504→
+  1505→    .hero-stats {
+  1506→        gap: 16px;
+  1507→    }
+  1508→
+  1509→    .stat-number {
+  1510→        font-size: var(--text-xl);
+  1511→    }
+  1512→
+  1513→    .features-grid {
+  1514→        grid-template-columns: 1fr;
+  1515→    }
+  1516→
+  1517→    .hero-actions {
+  1518→        flex-direction: column;
+  1519→        align-items: stretch;
+  1520→    }
+  1521→
+  1522→    .btn-primary,
+  1523→    .btn-secondary {
+  1524→        justify-content: center;
+  1525→    }
+  1526→}
+  1527→
+  1528→/* ============================================
+  1529→   Scrollbar
+  1530→   ============================================ */
+  1531→::-webkit-scrollbar {
+  1532→    width: 8px;
+  1533→}
+  1534→
+  1535→::-webkit-scrollbar-track {
+  1536→    background: var(--primary-dark);
+  1537→}
+  1538→
+  1539→::-webkit-scrollbar-thumb {
+  1540→    background: var(--primary-light);
+  1541→    border-radius: 4px;
+  1542→}
+  1543→
+  1544→::-webkit-scrollbar-thumb:hover {
+  1545→    background: var(--accent);
+  1546→}
+  1547→
+  1548→/* Selection */
+  1549→::selection {
+  1550→    background: var(--accent);
+  1551→    color: var(--primary-dark);
+  1552→}
+  1553→
