@@ -1,6 +1,7 @@
 /* ============================================
    سُكون - Sukoon Landing Page Styles
    Brand Colors: #1E3A5F, #2C4A6E, #FFFFFF, #F5F5F0
+   Font: Cairo (Geometric Arabic Display Font)
    ============================================ */
 
 /* CSS Variables - Easy to change colors */
@@ -15,8 +16,8 @@
     --accent: #C8A96E;
     --accent-light: #D4BA85;
     --text-primary: #FFFFFF;
-    --text-secondary: rgba(255, 255, 255, 0.8);
-    --text-muted: rgba(255, 255, 255, 0.6);
+    --text-secondary: rgba(255, 255, 255, 0.82);
+    --text-muted: rgba(255, 255, 255, 0.55);
     --border-color: rgba(255, 255, 255, 0.1);
     --border-color-light: rgba(255, 255, 255, 0.05);
     --gradient-primary: linear-gradient(135deg, #1E3A5F 0%, #2C4A6E 100%);
@@ -30,7 +31,30 @@
     --radius-lg: 20px;
     --radius-xl: 28px;
     --radius-full: 9999px;
-    --font-family: 'Tajawal', sans-serif;
+
+    /* ─── Typography System ─── */
+    --font-family: 'Cairo', sans-serif;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+
+    /* Type Scale (modular) */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-md: 1.0625rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -51,10 +75,12 @@ body {
     font-family: var(--font-family);
     background-color: var(--primary);
     color: var(--text-primary);
-    line-height: 1.7;
+    line-height: 1.75;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: var(--fw-regular);
+    letter-spacing: 0.01em;
 }
 
 a {
@@ -89,7 +115,7 @@ ul {
     right: 0;
     left: 0;
     z-index: 1000;
-    padding: 16px 0;
+    padding: 18px 0;
     transition: var(--transition);
     background: transparent;
 }
@@ -116,19 +142,19 @@ ul {
 }
 
 .logo-text {
-    font-size: 1.8rem;
-    font-weight: 900;
+    font-size: 2rem;
+    font-weight: var(--fw-black);
     color: var(--white);
-    letter-spacing: -0.5px;
+    letter-spacing: -0.02em;
 }
 
 .logo-sub {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--accent);
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    font-weight: 300;
-    margin-top: 2px;
+    font-weight: var(--fw-light);
+    margin-top: 1px;
 }
 
 .nav-links {
@@ -138,11 +164,12 @@ ul {
 }
 
 .nav-links a {
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: var(--text-sm);
+    font-weight: var(--fw-semibold);
     color: var(--text-secondary);
     position: relative;
     padding: 4px 0;
+    letter-spacing: 0.02em;
 }
 
 .nav-links a:hover {
@@ -168,13 +195,14 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
+    padding: 10px 22px;
     background: #25D366;
     color: var(--white) !important;
     border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 0.9rem;
+    font-weight: var(--fw-bold);
+    font-size: var(--text-sm);
     transition: var(--transition);
+    letter-spacing: 0.01em;
 }
 
 .btn-whatsapp:hover {
@@ -284,22 +312,24 @@ ul {
 
 .hero-badge {
     display: inline-block;
-    padding: 8px 20px;
-    background: rgba(200, 169, 110, 0.15);
-    border: 1px solid rgba(200, 169, 110, 0.3);
+    padding: 8px 22px;
+    background: rgba(200, 169, 110, 0.12);
+    border: 1px solid rgba(200, 169, 110, 0.25);
     border-radius: var(--radius-full);
     color: var(--accent);
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 24px;
+    font-size: var(--text-sm);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 28px;
+    letter-spacing: 0.03em;
     animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.2;
+    font-size: var(--text-6xl);
+    font-weight: var(--fw-black);
+    line-height: 1.15;
     margin-bottom: 24px;
+    letter-spacing: -0.02em;
     animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
@@ -311,11 +341,12 @@ ul {
 }
 
 .hero-desc {
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 36px;
+    line-height: 1.9;
+    margin-bottom: 40px;
     max-width: 520px;
+    font-weight: var(--fw-regular);
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -323,7 +354,7 @@ ul {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 48px;
+    margin-bottom: 52px;
     animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
@@ -331,16 +362,17 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 16px 32px;
+    padding: 16px 36px;
     background: #25D366;
     color: var(--white);
     border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: var(--fw-bold);
+    font-size: var(--text-base);
     font-family: var(--font-family);
     border: none;
     cursor: pointer;
     transition: var(--transition);
+    letter-spacing: 0.02em;
 }
 
 .btn-primary:hover {
@@ -350,24 +382,25 @@ ul {
 }
 
 .btn-primary.btn-large {
-    padding: 20px 40px;
-    font-size: 1.1rem;
+    padding: 20px 44px;
+    font-size: var(--text-lg);
 }
 
 .btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 16px 32px;
+    padding: 16px 36px;
     background: transparent;
     color: var(--white);
     border: 2px solid var(--border-color);
     border-radius: var(--radius-full);
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-base);
     font-family: var(--font-family);
     cursor: pointer;
     transition: var(--transition);
+    letter-spacing: 0.02em;
 }
 
 .btn-secondary:hover {
@@ -379,7 +412,7 @@ ul {
 .hero-stats {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 28px;
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
@@ -390,20 +423,23 @@ ul {
 }
 
 .stat-number {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: var(--text-2xl);
+    font-weight: var(--fw-extrabold);
     color: var(--accent);
+    letter-spacing: -0.01em;
 }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
     color: var(--text-muted);
     margin-top: 2px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.04em;
 }
 
 .stat-divider {
     width: 1px;
-    height: 40px;
+    height: 44px;
     background: var(--border-color);
 }
 
@@ -448,15 +484,16 @@ ul {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 18px;
+    padding: 10px 20px;
     background: rgba(200, 169, 110, 0.95);
     color: var(--primary-dark);
     border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 0.85rem;
+    font-weight: var(--fw-bold);
+    font-size: var(--text-sm);
     z-index: 2;
     animation: float 3s ease-in-out infinite;
     box-shadow: var(--shadow-glow);
+    letter-spacing: 0.02em;
 }
 
 .hero-float-badge svg {
@@ -474,7 +511,9 @@ ul {
     align-items: center;
     gap: 8px;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.06em;
     animation: bounce 2s ease-in-out infinite;
 }
 
@@ -483,26 +522,28 @@ ul {
    ============================================ */
 .section-header {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 72px;
 }
 
 .section-badge {
     display: inline-block;
-    padding: 6px 18px;
-    background: rgba(200, 169, 110, 0.12);
-    border: 1px solid rgba(200, 169, 110, 0.25);
+    padding: 7px 20px;
+    background: rgba(200, 169, 110, 0.1);
+    border: 1px solid rgba(200, 169, 110, 0.2);
     border-radius: var(--radius-full);
     color: var(--accent);
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 16px;
+    font-size: var(--text-sm);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 18px;
+    letter-spacing: 0.04em;
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 16px;
+    font-size: var(--text-4xl);
+    font-weight: var(--fw-extrabold);
+    line-height: 1.25;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
 }
 
 .section-title .highlight {
@@ -513,11 +554,12 @@ ul {
 }
 
 .section-desc {
-    font-size: 1.05rem;
+    font-size: var(--text-md);
     color: var(--text-secondary);
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
-    line-height: 1.8;
+    line-height: 1.85;
+    font-weight: var(--fw-regular);
 }
 
 /* ============================================
@@ -545,7 +587,7 @@ ul {
 }
 
 .feature-card {
-    padding: 32px 24px;
+    padding: 36px 28px;
     background: var(--gradient-card);
     border: 1px solid var(--border-color-light);
     border-radius: var(--radius-lg);
@@ -580,7 +622,7 @@ ul {
 .feature-icon {
     width: 64px;
     height: 64px;
-    margin: 0 auto 20px;
+    margin: 0 auto 22px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -596,16 +638,18 @@ ul {
 }
 
 .feature-card h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: var(--text-base);
+    font-weight: var(--fw-bold);
+    margin-bottom: 12px;
     color: var(--white);
+    letter-spacing: 0.01em;
 }
 
 .feature-card p {
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.75;
+    font-weight: var(--fw-regular);
 }
 
 /* ============================================
@@ -647,13 +691,14 @@ ul {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 6px 16px;
+    padding: 6px 18px;
     background: var(--accent);
     color: var(--primary-dark);
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: var(--text-xs);
+    font-weight: var(--fw-bold);
     z-index: 2;
+    letter-spacing: 0.03em;
 }
 
 .product-image {
@@ -674,27 +719,30 @@ ul {
 }
 
 .product-info {
-    padding: 28px;
+    padding: 32px;
 }
 
 .product-name {
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: var(--text-xl);
+    font-weight: var(--fw-extrabold);
     margin-bottom: 4px;
+    letter-spacing: -0.01em;
 }
 
 .product-type {
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 12px;
+    font-weight: var(--fw-semibold);
+    margin-bottom: 14px;
+    letter-spacing: 0.03em;
 }
 
 .product-desc {
-    font-size: 0.92rem;
+    font-size: var(--text-sm);
     color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 16px;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    font-weight: var(--fw-regular);
 }
 
 .product-features {
@@ -705,8 +753,9 @@ ul {
     position: relative;
     padding-right: 24px;
     margin-bottom: 8px;
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     color: var(--text-secondary);
+    font-weight: var(--fw-regular);
 }
 
 .product-features li::before {
@@ -730,10 +779,11 @@ ul {
     background: #25D366;
     color: var(--white);
     border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 0.95rem;
+    font-weight: var(--fw-bold);
+    font-size: var(--text-sm);
     font-family: var(--font-family);
     transition: var(--transition);
+    letter-spacing: 0.02em;
 }
 
 .btn-product:hover {
@@ -758,7 +808,7 @@ ul {
 }
 
 .review-card {
-    padding: 32px;
+    padding: 36px;
     background: var(--gradient-card);
     border: 1px solid var(--border-color-light);
     border-radius: var(--radius-lg);
@@ -772,17 +822,18 @@ ul {
 
 .review-stars {
     color: var(--accent);
-    font-size: 1.1rem;
-    margin-bottom: 16px;
-    letter-spacing: 2px;
+    font-size: var(--text-lg);
+    margin-bottom: 18px;
+    letter-spacing: 3px;
 }
 
 .review-text {
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
     color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 20px;
+    line-height: 1.85;
+    margin-bottom: 22px;
     font-style: italic;
+    font-weight: var(--fw-regular);
 }
 
 .review-author {
@@ -800,8 +851,8 @@ ul {
     background: rgba(200, 169, 110, 0.15);
     color: var(--accent);
     border-radius: 50%;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: var(--fw-bold);
+    font-size: var(--text-lg);
 }
 
 .author-info {
@@ -810,13 +861,15 @@ ul {
 }
 
 .author-name {
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: var(--fw-semibold);
+    font-size: var(--text-sm);
+    letter-spacing: 0.01em;
 }
 
 .author-verified {
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     color: var(--accent);
+    font-weight: var(--fw-medium);
 }
 
 /* Instagram Gallery */
@@ -825,10 +878,11 @@ ul {
 }
 
 .insta-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: var(--text-lg);
+    font-weight: var(--fw-semibold);
     color: var(--text-secondary);
     margin-bottom: 24px;
+    letter-spacing: 0.02em;
 }
 
 .insta-grid {
@@ -907,17 +961,19 @@ ul {
 }
 
 .cta-content h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 16px;
+    font-size: var(--text-4xl);
+    font-weight: var(--fw-extrabold);
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
 }
 
 .cta-content p {
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     color: var(--text-secondary);
     max-width: 550px;
-    margin: 0 auto 32px;
-    line-height: 1.8;
+    margin: 0 auto 36px;
+    line-height: 1.85;
+    font-weight: var(--fw-regular);
 }
 
 /* ============================================
@@ -941,11 +997,12 @@ ul {
 }
 
 .footer-desc {
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
     color: var(--text-muted);
-    line-height: 1.8;
+    line-height: 1.85;
     margin-bottom: 24px;
     max-width: 320px;
+    font-weight: var(--fw-regular);
 }
 
 .footer-social {
@@ -974,10 +1031,11 @@ ul {
 }
 
 .footer-links h4 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-size: var(--text-base);
+    font-weight: var(--fw-bold);
+    margin-bottom: 22px;
     color: var(--white);
+    letter-spacing: 0.02em;
 }
 
 .footer-links ul {
@@ -987,8 +1045,9 @@ ul {
 }
 
 .footer-links a {
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
     color: var(--text-muted);
+    font-weight: var(--fw-regular);
 }
 
 .footer-links a:hover {
@@ -997,19 +1056,21 @@ ul {
 }
 
 .footer-contact h4 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-size: var(--text-base);
+    font-weight: var(--fw-bold);
+    margin-bottom: 22px;
     color: var(--white);
+    letter-spacing: 0.02em;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
     color: var(--text-muted);
     margin-bottom: 12px;
+    font-weight: var(--fw-regular);
 }
 
 .contact-item:hover {
@@ -1023,8 +1084,10 @@ ul {
 }
 
 .footer-bottom p {
-    font-size: 0.85rem;
+    font-size: var(--text-xs);
     color: var(--text-muted);
+    font-weight: var(--fw-regular);
+    letter-spacing: 0.02em;
 }
 
 /* ============================================
@@ -1073,14 +1136,16 @@ ul {
 }
 
 .page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 12px;
+    font-size: var(--text-4xl);
+    font-weight: var(--fw-extrabold);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
 }
 
 .page-header p {
     color: var(--text-secondary);
-    font-size: 1.05rem;
+    font-size: var(--text-md);
+    font-weight: var(--fw-regular);
 }
 
 .page-content {
@@ -1090,28 +1155,31 @@ ul {
 }
 
 .page-content h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 40px 0 16px;
+    font-size: var(--text-2xl);
+    font-weight: var(--fw-bold);
+    margin: 44px 0 18px;
     color: var(--accent);
+    letter-spacing: 0.01em;
 }
 
 .page-content h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: var(--text-xl);
+    font-weight: var(--fw-semibold);
     margin: 28px 0 12px;
+    letter-spacing: 0.01em;
 }
 
 .page-content p {
     color: var(--text-secondary);
     line-height: 1.9;
-    margin-bottom: 16px;
-    font-size: 0.98rem;
+    margin-bottom: 18px;
+    font-size: var(--text-base);
+    font-weight: var(--fw-regular);
 }
 
 .page-content ul {
     padding-right: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .page-content ul li {
@@ -1119,8 +1187,9 @@ ul {
     padding-right: 20px;
     margin-bottom: 10px;
     color: var(--text-secondary);
-    line-height: 1.8;
-    font-size: 0.95rem;
+    line-height: 1.85;
+    font-size: var(--text-sm);
+    font-weight: var(--fw-regular);
 }
 
 .page-content ul li::before {
@@ -1139,9 +1208,10 @@ ul {
     align-items: center;
     gap: 8px;
     color: var(--accent);
-    font-weight: 600;
+    font-weight: var(--fw-semibold);
     margin-bottom: 24px;
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
+    letter-spacing: 0.02em;
 }
 
 .back-link:hover {
@@ -1162,10 +1232,11 @@ ul {
 
 .form-group label {
     display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: var(--text-sm);
+    font-weight: var(--fw-semibold);
     margin-bottom: 8px;
     color: var(--white);
+    letter-spacing: 0.02em;
 }
 
 .form-group input,
@@ -1178,9 +1249,10 @@ ul {
     border-radius: var(--radius-md);
     color: var(--white);
     font-family: var(--font-family);
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
     transition: var(--transition);
     outline: none;
+    font-weight: var(--fw-regular);
 }
 
 .form-group input:focus,
@@ -1208,10 +1280,11 @@ ul {
     border: none;
     border-radius: var(--radius-full);
     font-family: var(--font-family);
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: var(--text-base);
+    font-weight: var(--fw-bold);
     cursor: pointer;
     transition: var(--transition);
+    letter-spacing: 0.02em;
 }
 
 .form-submit:hover {
@@ -1295,7 +1368,7 @@ ul {
 
     .hero-desc {
         max-width: 100%;
-        margin: 0 auto 36px;
+        margin: 0 auto 40px;
     }
 
     .hero-actions {
@@ -1354,7 +1427,7 @@ ul {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: var(--text-5xl);
     }
 
     .hero {
@@ -1387,11 +1460,11 @@ ul {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: var(--text-3xl);
     }
 
     .cta-content h2 {
-        font-size: 2rem;
+        font-size: var(--text-3xl);
     }
 
     .cta-inner {
@@ -1426,7 +1499,7 @@ ul {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: var(--text-4xl);
     }
 
     .hero-stats {
@@ -1434,7 +1507,7 @@ ul {
     }
 
     .stat-number {
-        font-size: 1.2rem;
+        font-size: var(--text-xl);
     }
 
     .features-grid {
