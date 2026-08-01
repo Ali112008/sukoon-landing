@@ -1,8 +1,23 @@
 # Dependencies
 node_modules/
 
+# Next.js
+.next/
+next-env.d.ts
+out/
+
 # Vercel
 .vercel/
+
+# Old project directories
+sokoun-landing/
+sukoon-landing/
+
+# Internal tools & scripts
+.zscripts/
+skills/
+tool-results/
+upload/
 
 # OS Files
 .DS_Store
@@ -28,3 +43,9 @@ npm-debug.log*
 # Build
 dist/
 .cache/
+
+# Debug / Screenshots (not part of the site)
+logo-preview.png
+screenshot-vercel.png
+vercel-check.png
+dev.log
