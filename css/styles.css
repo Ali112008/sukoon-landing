@@ -4,6 +4,9 @@
    Font: Readex Pro (Modern Arabic Display Font)
    ============================================ */
 
+/* ─── Font Import (backup method) ─── */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700;800&display=swap');
+
 /* CSS Variables - Easy to change colors */
 :root {
     --primary: #1E3A5F;
@@ -136,25 +139,38 @@ ul {
 
 .logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 10px;
     line-height: 1;
 }
 
+.logo-img {
+    height: 44px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .logo-text {
-    font-size: 2rem;
-    font-weight: var(--fw-black);
+    font-size: 1.8rem;
+    font-weight: var(--fw-extrabold);
     color: var(--white);
     letter-spacing: -0.02em;
+    line-height: 1;
 }
 
 .logo-sub {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     color: var(--accent);
     letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: var(--fw-light);
-    margin-top: 1px;
+    margin-top: 2px;
 }
 
 .nav-links {
@@ -992,8 +1008,12 @@ ul {
 }
 
 .footer-brand .logo {
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 16px;
+}
+
+.footer-brand .logo-img {
+    height: 52px;
 }
 
 .footer-desc {

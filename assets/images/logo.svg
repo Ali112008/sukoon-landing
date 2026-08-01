@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C8A96E;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4BA85;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C8A96E;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C4A6E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E3A5F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Pillow icon - elegant crescent/pillow shape -->
+  <g transform="translate(8, 12)">
+    <!-- Outer pillow shape -->
+    <path d="M28 8 C28 3.5, 24 0, 18 0 L12 0 C6 0, 2 3.5, 2 8 C2 12, 4 16, 8 18 L10 19 C12 20, 18 20, 20 19 L22 18 C26 16, 28 12, 28 8 Z" fill="url(#goldGrad)" opacity="0.9"/>
+    <!-- Inner pillow highlight -->
+    <path d="M24 8 C24 5, 21 3, 16 3 L12 3 C7 3, 5 5, 5 8 C5 10.5, 6.5 13, 9 14.5 L10 15 C12 16, 16 16, 18 15 L19 14.5 C21.5 13, 24 10.5, 24 8 Z" fill="url(#navyGrad)" opacity="0.6"/>
+    <!-- Stitching line -->
+    <path d="M8 10 Q15 14 22 10" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" stroke-dasharray="2,1.5" opacity="0.7"/>
+  </g>
+  
+  <!-- Brand Name: سُكون -->
+  <text x="48" y="38" font-family="Readex Pro, Arial, sans-serif" font-size="28" font-weight="800" fill="white" letter-spacing="-1">
+    سُكون
+  </text>
+  
+  <!-- Subtitle: PILLOW -->
+  <text x="48" y="52" font-family="Readex Pro, Arial, sans-serif" font-size="8" font-weight="300" fill="url(#goldGrad)" letter-spacing="6" text-transform="uppercase">
+    PILLOW
+  </text>
+  
+  <!-- Decorative gold line -->
+  <line x1="48" y1="56" x2="100" y2="56" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.4"/>
+</svg>
