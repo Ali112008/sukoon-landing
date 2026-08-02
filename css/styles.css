@@ -1628,12 +1628,21 @@ ul { list-style: none; }
         right: 0;
     }
 
-    .nav-links .btn-whatsapp {
-        display: inline-flex;
+    .navbar-inner {
+        position: relative;
+        justify-content: center;
     }
 
     .mobile-toggle {
         display: flex;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-links .btn-whatsapp {
+        display: inline-flex;
     }
 
     .hero {
