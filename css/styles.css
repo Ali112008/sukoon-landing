@@ -619,9 +619,10 @@ ul { list-style: none; }
 .section-title {
     font-size: var(--text-4xl);
     font-weight: var(--fw-extrabold);
-    line-height: 1.5;
+    line-height: 1.85;
     margin-bottom: 20px;
-    padding-top: 0.08em;
+    padding-top: 0.25em;
+    padding-bottom: 0.1em;
     letter-spacing: 0;
     overflow: visible;
 }
@@ -631,6 +632,10 @@ ul { list-style: none; }
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    overflow: visible;
+    line-height: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
 }
 
 .section-desc {
@@ -1060,6 +1065,10 @@ ul { list-style: none; }
     font-weight: var(--fw-extrabold);
     margin-bottom: 20px;
     letter-spacing: 0;
+    line-height: 1.85;
+    padding-top: 0.25em;
+    padding-bottom: 0.1em;
+    overflow: visible;
 }
 
 .cta-content p {
@@ -1318,6 +1327,10 @@ ul { list-style: none; }
     font-weight: var(--fw-extrabold);
     margin-bottom: 16px;
     letter-spacing: 0;
+    line-height: 1.85;
+    padding-top: 0.25em;
+    padding-bottom: 0.1em;
+    overflow: visible;
 }
 
 .page-header p {
