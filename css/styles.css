@@ -966,12 +966,14 @@ ul { list-style: none; }
 
 .guarantee-item {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 28px 24px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 36px 24px;
     background: var(--gradient-card);
     border: 1px solid var(--border-color-light);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     transition: all var(--transition);
 }
 
@@ -983,28 +985,29 @@ ul { list-style: none; }
 
 .guarantee-icon {
     flex-shrink: 0;
-    width: 52px;
-    height: 52px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(200, 169, 110, 0.1);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     color: var(--accent);
+    margin-bottom: 4px;
 }
 
 .guarantee-text h4 {
-    font-size: var(--text-base);
+    font-size: clamp(1rem, 0.95rem + 0.15vw, 1.0625rem);
     font-weight: var(--fw-bold);
     color: var(--white);
-    margin-bottom: 6px;
-    line-height: 1.6;
+    margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 .guarantee-text p {
-    font-size: var(--text-sm);
+    font-size: clamp(0.82rem, 0.78rem + 0.1vw, 0.875rem);
     color: var(--text-muted);
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 /* ============================================
