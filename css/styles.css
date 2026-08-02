@@ -728,13 +728,13 @@ ul { list-style: none; }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
 }
 
 .products-grid-single {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 860px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -776,6 +776,7 @@ ul { list-style: none; }
     position: relative;
     aspect-ratio: 4/3;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .product-image img {
