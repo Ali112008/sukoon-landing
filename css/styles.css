@@ -259,7 +259,7 @@ ul { list-style: none; }
     align-items: center;
     justify-content: center;
     padding: 100px 0 60px;
-    background: url('../assets/images/hero-bg.jpg') center center / cover no-repeat;
+    background: url('../assets/images/webp/hero-bg.webp') center center / cover no-repeat;
     overflow: hidden;
 }
 
