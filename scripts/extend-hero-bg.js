@@ -4,15 +4,15 @@ import fs from 'fs';
 async function main() {
   const zai = await ZAI.create();
 
-  // Read the portrait image and convert to base64 data URL
+  // Read the ORIGINAL client photo
   const imageBuffer = fs.readFileSync('/home/z/my-project/assets/images/hero-bg-new.png');
   const base64Image = imageBuffer.toString('base64');
   const dataUrl = `data:image/png;base64,${base64Image}`;
 
-  console.log('📸 Sending image edit request...');
+  console.log('📸 Sending image edit request with ORIGINAL client photo...');
 
   const response = await zai.images.generations.edit({
-    prompt: 'Extend this bedroom photo to a wide landscape format. Keep the man sleeping on the white pillow on the right side of the frame. Extend the room to the left showing more of the bedroom with a dark navy blue wall, a bedside table with a decorative lamp, soft ambient evening lighting. Maintain the calm, serene, luxurious mood. The image should work as a hero section background for a premium pillow brand. Keep the upper area with dark gradient for white text overlay. Professional product photography quality.',
+    prompt: 'Widen this photo to a landscape format. The man sleeping on the white pillow MUST remain clearly visible on the right side of the frame. Extend the bedroom scene to the left side - show more of the bed, headboard, and bedside table with lamp. Keep the same warm lighting, same brown headboard, same blue shirt, same white pillow. This is a real photo - maintain photorealistic quality. Do NOT change the person or pillow at all.',
     images: [{ url: dataUrl }],
     size: '1440x720'
   });
