@@ -263,10 +263,10 @@ ul { list-style: none; }
     overflow: hidden;
 }
 
-/* Mobile: use portrait-oriented background */
-@media (max-width: 768px) {
+/* Mobile: use tall/portrait background */
+@media (max-width: 1024px) {
     .hero {
-        background-image: url('../assets/images/webp/hero-bg-new.webp');
+        background-image: url('../assets/images/webp/hero-bg-new.webp') !important;
         background-position: center 75%;
     }
 }
