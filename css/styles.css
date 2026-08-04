@@ -259,8 +259,16 @@ ul { list-style: none; }
     align-items: flex-start;
     justify-content: center;
     padding: 0;
-    background: url('../assets/images/webp/hero-bg-new.webp') center top / cover no-repeat;
+    background: url('../assets/images/webp/hero-bg-desktop.webp') center center / cover no-repeat;
     overflow: hidden;
+}
+
+/* Mobile: use portrait-oriented background */
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('../assets/images/webp/hero-bg-new.webp');
+        background-position: center top;
+    }
 }
 
 .hero-bg-overlay {
@@ -434,46 +442,48 @@ ul { list-style: none; }
     transform: translateY(-1px);
 }
 
-/* Hero Stats Row */
-.hero-stats-row {
+/* Hero Prices (inside desc-box) */
+.hero-prices {
     display: flex;
     align-items: center;
-    gap: 24px;
-    padding-top: 28px;
+    justify-content: center;
+    gap: 20px;
+    padding: 16px 0 4px;
     border-top: 1px solid rgba(255, 255, 255, 0.10);
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
-.hero-stat-item {
+.hero-price-item {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    gap: 2px;
 }
 
-.hero-stat-value {
-    font-size: var(--text-xl);
-    font-weight: var(--fw-extrabold);
+.hero-price-value {
+    font-size: var(--text-lg);
+    font-weight: var(--fw-bold);
     color: var(--accent);
     letter-spacing: -0.01em;
     line-height: 1.2;
 }
 
-.hero-stat-value small {
+.hero-price-value small {
     font-size: var(--text-sm);
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-medium);
 }
 
-.hero-stat-label {
-    font-size: 0.75rem;
+.hero-price-label {
+    font-size: 0.7rem;
     color: var(--text-muted);
     font-weight: var(--fw-medium);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
 }
 
-.hero-stat-divider {
+.hero-price-divider {
     width: 1px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.1);
+    height: 30px;
+    background: rgba(255, 255, 255, 0.10);
     flex-shrink: 0;
 }
 
@@ -1651,8 +1661,8 @@ ul { list-style: none; }
         justify-content: center;
     }
 
-    .hero-stats-row {
-        justify-content: center;
+    .hero-prices {
+        gap: 16px;
     }
 
     .features-grid {
@@ -1874,13 +1884,13 @@ ul { list-style: none; }
         max-width: 100%;
     }
 
-    .hero-stats-row {
-        gap: 16px;
+    .hero-prices {
+        gap: 14px;
         flex-wrap: wrap;
     }
 
-    .hero-stat-value {
-        font-size: var(--text-lg);
+    .hero-price-value {
+        font-size: var(--text-base);
     }
 
     .hero-actions {
