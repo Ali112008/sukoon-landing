@@ -1937,6 +1937,142 @@ ul { list-style: none; }
     width: 8px;
 }
 
+/* ─── Posture Comparison Section ─── */
+.posture-section {
+    padding: 80px 0;
+    background: var(--gradient-primary);
+}
+
+.posture-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.posture-image-col {
+    display: flex;
+    justify-content: center;
+}
+
+.posture-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.posture-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.posture-point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease;
+}
+
+.posture-point:hover {
+    transform: translateX(-4px);
+}
+
+.posture-point.wrong {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.25);
+}
+
+.posture-point.right {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.25);
+}
+
+.posture-point.wrong .posture-point-icon {
+    color: #dc3545;
+}
+
+.posture-point.right .posture-point-icon {
+    color: #28a745;
+}
+
+.posture-point-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.posture-point-text h4 {
+    font-size: 1.05rem;
+    font-weight: var(--fw-bold);
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.posture-point-text p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.posture-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background: var(--gradient-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.posture-benefit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: var(--fw-medium);
+}
+
+.posture-benefit svg {
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+/* Mobile: stack posture section */
+@media (max-width: 768px) {
+    .posture-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .posture-image-col {
+        order: -1;
+    }
+
+    .posture-img {
+        max-width: 320px;
+    }
+
+    .posture-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .posture-point {
+        padding: 16px;
+    }
+
+    .posture-benefits {
+        padding: 16px;
+    }
+}
+
 ::-webkit-scrollbar-track {
     background: var(--primary-dark);
 }
