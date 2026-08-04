@@ -297,8 +297,7 @@ ul { list-style: none; }
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    align-items: flex-start;
-    padding-top: 12vh;
+    align-items: center;
 }
 
 .hero-text-block {
@@ -1730,8 +1729,7 @@ ul { list-style: none; }
     }
 
     .hero-content-wrapper {
-        align-items: flex-start;
-        padding-top: 80px;
+        align-items: center;
     }
 
     .hero-title {
