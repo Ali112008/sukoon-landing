@@ -267,7 +267,7 @@ ul { list-style: none; }
 @media (max-width: 768px) {
     .hero {
         background-image: url('../assets/images/webp/hero-bg-new.webp');
-        background-position: center top;
+        background-position: center 65%;
     }
 }
 
