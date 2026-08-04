@@ -310,9 +310,7 @@ ul { list-style: none; }
 }
 
 .hero-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -325,15 +323,6 @@ ul { list-style: none; }
     line-height: 1.2;
 }
 
-.hero-brand-sub {
-    font-size: clamp(0.65rem, 0.5rem + 0.5vw, 0.85rem);
-    font-weight: var(--fw-medium);
-    color: var(--accent);
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    margin-top: 2px;
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-}
 
 .hero-title {
     font-size: clamp(2.5rem, 1.5rem + 3.5vw, 4.2rem);
