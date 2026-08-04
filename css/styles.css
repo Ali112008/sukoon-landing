@@ -1,10 +1,10 @@
 /* ============================================
    سُكون - Sukoon Landing Page Styles
    Brand Colors: #1E3A5F, #2C4A6E, #FFFFFF, #F5F5F0
-   Font: Tajawal (خط عربي عصري وأنيق)
+   Font: IBM Plex Sans Arabic (خط عربي عصري وأنيق)
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&display=swap');
 
 /* ─── CSS Variables ─── */
 :root {
@@ -37,13 +37,13 @@
     --radius-full: 9999px;
 
     /* Typography */
-    --font-family: 'Tajawal', sans-serif;
+    --font-family: 'IBM Plex Sans Arabic', sans-serif;
     --fw-light: 300;
     --fw-regular: 400;
     --fw-medium: 500;
     --fw-bold: 700;
-    --fw-extrabold: 800;
-    --fw-black: 900;
+    --fw-extrabold: 700;
+    --fw-black: 700;
 
     /* Type Scale */
     --text-xs: 0.75rem;
