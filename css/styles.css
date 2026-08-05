@@ -342,23 +342,12 @@ ul { list-style: none; }
 }
 
 .hero-desc-box {
-    background: rgba(30, 58, 95, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #1A3352;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-lg);
     padding: 28px 36px;
     margin-bottom: 24px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-}
-
-/* Enhanced glass effect for devices that support backdrop-filter */
-@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
-    .hero-desc-box {
-        background: rgba(30, 58, 95, 0.45);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.10);
-        box-shadow: none;
-    }
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .hero-desc {
