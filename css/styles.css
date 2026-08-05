@@ -314,7 +314,7 @@ ul { list-style: none; }
 }
 
 .hero-brand-name {
-    font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
+    font-size: clamp(2.2rem, 1.5rem + 2.5vw, 3.4rem);
     font-weight: var(--fw-black);
     color: var(--white);
     letter-spacing: 0.06em;
