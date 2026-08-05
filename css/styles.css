@@ -1777,9 +1777,49 @@ ul { list-style: none; }
 
     .products-grid,
     .products-grid-single {
-        grid-template-columns: 1fr;
-        max-width: 420px;
-        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product-info {
+        padding: 16px 12px;
+    }
+
+    .product-name {
+        font-size: var(--text-base);
+    }
+
+    .product-type {
+        font-size: var(--text-xs);
+        margin-bottom: 8px;
+    }
+
+    .product-features {
+        font-size: var(--text-xs);
+    }
+
+    .product-features li {
+        padding: 3px 0;
+    }
+
+    .product-badge {
+        top: 10px;
+        right: 10px;
+        padding: 4px 10px;
+        font-size: 0.65rem;
+    }
+
+    .price-current {
+        font-size: var(--text-lg);
+    }
+
+    .price-was {
+        font-size: var(--text-xs);
+    }
+
+    .btn-product {
+        padding: 10px 14px;
+        font-size: var(--text-xs);
     }
 
     .reviews {
@@ -1892,7 +1932,20 @@ ul { list-style: none; }
     }
 
     .btn-product {
-        padding: 15px 28px;
+        padding: 10px 14px;
+        font-size: var(--text-xs);
+    }
+
+    .product-info {
+        padding: 14px 10px;
+    }
+
+    .product-name {
+        font-size: var(--text-sm);
+    }
+
+    .product-features li {
+        padding: 2px 0;
     }
 
     .features-grid {
